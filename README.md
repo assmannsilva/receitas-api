@@ -45,6 +45,16 @@ curl -X DELETE http://localhost:8080/recipes/ID
 
 Título (até 200 bytes), ingredientes e instruções são obrigatórios. O tempo de preparo em minutos e o número de porções devem ser positivos. Campos desconhecidos, JSON inválido e corpos acima de 1 MiB recebem 400; IDs inexistentes recebem 404. Erros da aplicação usam `{"error":"mensagem"}`. As respostas padrão do roteador, como método não permitido, são texto.
 
+## Verificar a saúde da API
+
+Com o servidor em execução:
+
+```sh
+curl http://localhost:8080/health
+```
+
+A resposta esperada é `200 OK` com o corpo `{"status":"ok"}`.
+
 ## Testes e compilação
 
 ```sh
